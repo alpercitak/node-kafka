@@ -1,0 +1,16 @@
+{
+  "name": "@node-kafka/producer",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@node-kafka/kafka-client": "workspace:",
+    "kafkajs": "^2.2.4"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.0"
+  }
+}
