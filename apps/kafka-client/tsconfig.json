@@ -3,7 +3,6 @@
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "src",
-    "composite": true, // enable for project references if needed
     "declaration": true, // generate .d.ts files
     "declarationMap": true,
     "sourceMap": true
