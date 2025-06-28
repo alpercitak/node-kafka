@@ -16,7 +16,6 @@ WORKDIR /app
 ARG APP_NAME
 RUN turbo prune --scope="${APP_NAME}" --docker
 
-
 FROM base AS build
 
 WORKDIR /app

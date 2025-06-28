@@ -8,7 +8,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "kafkajs": "^2.2.4",
-    "typescript": "^5.2.0"
+    "kafkajs": "catalog:",
+    "typescript": "catalog:"
   }
 }

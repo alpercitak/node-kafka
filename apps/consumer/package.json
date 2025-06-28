@@ -7,10 +7,10 @@
   },
   "dependencies": {
     "@node-kafka/kafka-client": "workspace:",
-    "kafkajs": "^2.2.4"
+    "kafkajs": "catalog:"
   },
   "devDependencies": {
-    "ts-node": "^10.9.1",
-    "typescript": "^5.2.0"
+    "ts-node": "catalog:",
+    "typescript": "catalog:"
   }
 }
