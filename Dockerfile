@@ -24,7 +24,7 @@ ARG APP_NAME
 ARG PKG_NAME
 RUN echo build: ${APP_NAME}
 
-RUN pnpm i -r --offline
+RUN pnpm i -r --offline --force
 RUN pnpm turbo build --filter="${PKG_NAME}" 
 
 RUN rm -rf ./node_modules
