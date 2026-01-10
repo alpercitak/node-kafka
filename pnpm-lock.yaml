@@ -12,9 +12,6 @@ catalogs:
     ts-node:
       specifier: ^10.9.2
       version: 10.9.2
-    typescript:
-      specifier: ^5.8.3
-      version: 5.8.3
 
 importers:
 
@@ -38,10 +35,10 @@ importers:
     devDependencies:
       ts-node:
         specifier: 'catalog:'
-        version: 10.9.2(@types/node@24.0.4)(typescript@5.8.3)
+        version: 10.9.2(@types/node@24.0.4)(typescript@5.9.3)
       typescript:
         specifier: 'catalog:'
-        version: 5.8.3
+        version: 5.9.3
 
   apps/kafka-client:
     dependencies:
@@ -50,7 +47,7 @@ importers:
         version: 2.2.4
       typescript:
         specifier: 'catalog:'
-        version: 5.8.3
+        version: 5.9.3
 
   apps/producer:
     dependencies:
@@ -63,10 +60,10 @@ importers:
     devDependencies:
       ts-node:
         specifier: 'catalog:'
-        version: 10.9.2(@types/node@24.0.4)(typescript@5.8.3)
+        version: 10.9.2(@types/node@24.0.4)(typescript@5.9.3)
       typescript:
         specifier: 'catalog:'
-        version: 5.8.3
+        version: 5.9.3
 
 packages:
 
@@ -173,11 +170,6 @@ packages:
     resolution: {integrity: sha512-+HjKlP4OfYk+qzvWNETA3cUO5UuK6b5MSc2UJOKyvBceKucQoQGb2g7HlC2H1GHdkfKrk4YF1VPvROkhVZDDLQ==}
     hasBin: true
 
-  typescript@5.8.3:
-    resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
-    engines: {node: '>=14.17'}
-    hasBin: true
-
   typescript@5.9.3:
     resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
     engines: {node: '>=14.17'}
@@ -236,7 +228,7 @@ snapshots:
 
   make-error@1.3.6: {}
 
-  ts-node@10.9.2(@types/node@24.0.4)(typescript@5.8.3):
+  ts-node@10.9.2(@types/node@24.0.4)(typescript@5.9.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
@@ -250,7 +242,7 @@ snapshots:
       create-require: 1.1.1
       diff: 4.0.2
       make-error: 1.3.6
-      typescript: 5.8.3
+      typescript: 5.9.3
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
 
@@ -280,8 +272,6 @@ snapshots:
       turbo-linux-arm64: 2.7.3
       turbo-windows-64: 2.7.3
       turbo-windows-arm64: 2.7.3
-
-  typescript@5.8.3: {}
 
   typescript@5.9.3: {}
 
