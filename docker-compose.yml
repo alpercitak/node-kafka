@@ -24,6 +24,7 @@ services:
       target: deploy
       args:
         APP_NAME: 'producer'
+        PKG_NAME: '@node-kafka/producer'
     depends_on:
       - kafka
 
@@ -32,5 +33,6 @@ services:
       target: deploy
       args:
         APP_NAME: 'consumer'
+        PKG_NAME: '@node-kafka/consumer'
     depends_on:
       - kafka
