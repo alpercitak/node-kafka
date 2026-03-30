@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   build:
-    timeout-minutes: 10
+    timeout-minutes: 15
     runs-on: ubuntu-latest
 
     steps:
@@ -25,6 +25,38 @@ jobs:
           node-version: "24"
           cache: "pnpm"
 
-      - run: pnpm i --frozen-lockfile --prefer-offline
+      - run: pnpm i --frozen-lockfile
 
       - run: pnpm build
+
+      - name: Start Kafka
+        run: docker compose up -d kafka
+
+      - name: Wait for Kafka to be healthy
+        run: |
+          echo "Waiting for Kafka..."
+          timeout 60 bash -c 'until docker compose ps kafka | grep -q "healthy"; do sleep 2; done'
+          echo "Kafka is ready"
+
+      - name: Build Docker images
+        run: docker compose build producer consumer
+
+      - name: Run producer and consumer
+        run: docker compose up -d producer consumer
+
+      - name: Wait and check logs
+        run: |
+          sleep 10
+          echo "=== Producer logs ==="
+          docker compose logs producer
+          echo "=== Consumer logs ==="
+          docker compose logs consumer
+
+      - name: Assert messages were produced and consumed
+        run: |
+          docker compose logs producer | grep -q "Produced:" || (echo "Producer did not produce messages" && exit 1)
+          docker compose logs consumer | grep -q "Consumed:" || (echo "Consumer did not consume messages" && exit 1)
+
+      - name: Tear down
+        if: always()
+        run: docker compose down -v
