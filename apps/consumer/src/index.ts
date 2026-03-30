@@ -11,6 +11,14 @@ async function run() {
       console.log('Consumed:', message.value?.toString());
     },
   });
+
+  const shutdown = async () => {
+    await consumer.disconnect();
+    process.exit(0);
+  };
+
+  process.on('SIGTERM', shutdown);
+  process.on('SIGINT', shutdown);
 }
 
 run().catch(console.error);
