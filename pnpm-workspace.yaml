@@ -1,7 +1,9 @@
 packages:
-  - 'apps/*'
+  - "apps/*"
+  - "packages/*"
 
 catalog:
+  "@types/node": ^25.5.0
   kafkajs: ^2.2.4
   ts-node: ^10.9.2
   typescript: ^6.0.0

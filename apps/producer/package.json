@@ -10,6 +10,8 @@
     "kafkajs": "catalog:"
   },
   "devDependencies": {
+    "@node-kafka/tsconfig": "workspace:*",
+    "@types/node": "catalog:",
     "ts-node": "catalog:",
     "typescript": "catalog:"
   }

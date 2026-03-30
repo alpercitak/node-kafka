@@ -1,11 +1,9 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "@node-kafka/tsconfig/base.json",
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "src",
-    "declaration": true, // generate .d.ts files
-    "declarationMap": true,
-    "sourceMap": true
+    "types": ["node"]
   },
   "include": ["src"]
 }

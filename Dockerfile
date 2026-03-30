@@ -27,7 +27,7 @@ RUN pnpm i -r --offline
 COPY --from=prepare /app/out/full/ .
 RUN pnpm turbo build --filter="${PKG_NAME}"
 
-RUN pnpm i -r --offline --prod --filter="${PKG_NAME}"
+RUN CI=true pnpm i -r --offline --prod
 
 FROM node:25-alpine AS deploy
 
